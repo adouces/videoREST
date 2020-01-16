@@ -1,0 +1,9 @@
+{
+    "db": {
+        "host": "YOUR_DB_HOST",
+        "user": "YOUR_DB_USER",
+        "password": "YOUR_DB_PASSWORD",
+        "database": "YOUR_DB_DATABASE",
+        "dialect": "[mysql|mariadb]"
+    }
+}
