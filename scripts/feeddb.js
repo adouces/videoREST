@@ -3,7 +3,7 @@ const sync = require('./syncdb');
 
 
 sync().then(() => Peliculas.create({
-    name: 'janedoe',
+    nombre: 'janedoe',
     pais: 'España',
     fecha_estreno: new Date(1999, 6, 20),
     director: 'Pepe',
