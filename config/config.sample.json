@@ -4,6 +4,7 @@
         "user": "YOUR_DB_USER",
         "password": "YOUR_DB_PASSWORD",
         "database": "YOUR_DB_DATABASE",
-        "dialect": "[mysql|mariadb]"
+        "dialect": "[mysql|mariadb]",
+        "port": "YOUR_DB_PORT"
     }
 }

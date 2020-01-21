@@ -42,7 +42,7 @@ Todas las siguientes propiedades son requeridas:
 - director
 - reparto
 
-### GET /api/peliculas?page&nombre
+### GET /api/peliculas/?page&nombre
 1. por default devuelve la primera pagina ordenada por nombre
 2. si recibo pagina devuelvo la pagina
 3. si recibo nombre busco por nombre y devuelvo los resultados paginados

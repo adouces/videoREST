@@ -76,3 +76,4 @@ $RECYCLE.BIN/
 
 # Project ignores
 config.json
+config.test.json
