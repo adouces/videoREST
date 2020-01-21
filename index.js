@@ -1,7 +1,7 @@
 const express = require('express');
-const app = express();
 const peliculasAPI = require('./lib/api/peliculas');
 const bodyParser = require('body-parser');
+const app = express();
 
 
 // parse application/x-www-form-urlencoded
