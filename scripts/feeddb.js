@@ -1,7 +1,8 @@
 const Peliculas = require('../lib/models/peliculas');
 const sync = require('./syncdb');
-const movies = require('./load');
+const dbcreate = require('./createdb');
 
+dbcreate;
 
 const movies = [
   {
