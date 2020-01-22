@@ -2,7 +2,6 @@ const Peliculas = require('../lib/models/peliculas');
 const sync = require('./syncdb');
 const dbcreate = require('./createdb');
 
-dbcreate;
 
 const movies = [
   {
@@ -106,6 +105,13 @@ const movies = [
 ];
 
 
-movies.forEach(movie => {
-  sync().then(() => Peliculas.create(movie))
+dbcreate(false).then(() => {
+ return Promise.all(
+    movies.map(movie => {
+      return sync().then(() => Peliculas.create(movie))
+    })
+  )
+}).then((results) => {
+  console.log(`Created a total of ${results.length} records`);
+  process.exit(0);
 });
