@@ -6,6 +6,8 @@ const createDB = require('../scripts/createdb');
 const fixtures = require('./fixtures');
 
 
+createDB(false);
+
 chai.use(chaiHttp);
 chai.should();
 
