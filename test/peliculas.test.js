@@ -6,7 +6,7 @@ const createDB = require('../scripts/createdb');
 const fixtures = require('./fixtures');
 
 
-createDB(false);
+
 
 chai.use(chaiHttp);
 chai.should();
@@ -17,6 +17,7 @@ const borrarPeliculas = () => Peliculas.destroy({
 }); 
 
 describe('Peliculas API', () => {
+  before(() => createDB(false));
   beforeEach(() => {
     return Peliculas.sync().then( () =>
       borrarPeliculas().then(() => 
