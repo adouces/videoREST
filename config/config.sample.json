@@ -5,6 +5,7 @@
         "password": "YOUR_DB_PASSWORD",
         "database": "YOUR_DB_DATABASE",
         "dialect": "[mysql|mariadb]",
-        "port": "YOUR_DB_PORT"
+        "port": "YOUR_DB_PORT",
+        "logging": false
     }
 }

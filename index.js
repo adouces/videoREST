@@ -1,7 +1,7 @@
 const express = require('express');
 const peliculasAPI = require('./lib/api/peliculas');
 const bodyParser = require('body-parser');
-const app = express();
+const app = module.exports = express();
 
 
 // parse application/x-www-form-urlencoded
@@ -16,3 +16,4 @@ app.use(peliculasAPI);
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {console.log(`Listening on port ${port}`)});
+
