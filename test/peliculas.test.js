@@ -94,7 +94,7 @@ describe('Peliculas API', () => {
         .send({
           nombre: "test",
           pais: "test",
-          fecha_estreno: new Date("1999/9/9"),
+          fecha_estreno: "1999/9/9",
           director: "test",
           reparto: "test"
         })
@@ -104,14 +104,14 @@ describe('Peliculas API', () => {
         });
     });
 
-    it.skip('it should return bad request', (done) => {
+    it('it should return bad request', (done) => {
       chai.request(server)
         .post('/api/peliculas')
         .set('content-type', 'application/x-www-form-urlencoded')
         .send({
           nombre: "test",
           pais: "test",
-          fecha_estreno: new Date("1999/9/90"),
+          fecha_estreno: "1999/9/90",
           director: "test",
           reparto: "test"
         })
@@ -130,7 +130,7 @@ describe('Peliculas API', () => {
         .set('content-type', 'application/x-www-form-urlencoded')
         .send({
           pais: "test",
-          fecha_estreno: new Date("1999/9/9"),
+          fecha_estreno: "1999/9/9",
           director: "test",
           reparto: "test"
         })
@@ -141,10 +141,11 @@ describe('Peliculas API', () => {
           res.body.message.should.contain("Faltan valores requeridos, o hay valores no soportados o erroneos");
           done();
         });
-    });
+    });    
+  });
     
     describe('PATCH /api/peliculas/:id', () => {
-      it('it should update pelicula to /api/peliculas/:id PATCH', (done) => {
+      it('it should update pelicula of the specified id', (done) => {
         chai.request(server)
           .patch('/api/peliculas/14')
           .set('content-type', 'application/x-www-form-urlencoded')
@@ -162,7 +163,7 @@ describe('Peliculas API', () => {
           });
       });
       
-      it('it should update pelicula to /api/peliculas/:id PATCH', (done) => {
+      it('it should return invalid id', (done) => {
         chai.request(server)
           .patch('/api/peliculas/1t')
           .set('content-type', 'application/x-www-form-urlencoded')
@@ -181,7 +182,48 @@ describe('Peliculas API', () => {
           });
       });
 
+      it.skip('it should return invalid or missing data', (done) => {
+        chai.request(server)
+          .patch('/api/peliculas/1t')
+          .set('content-type', 'application/x-www-form-urlencoded')
+          .send({
+            nombre: "test",
+            pais: "test",
+            fecha_estreno: "1999/9/90"
+          })
+          .end((err, res) => {
+            res.should.have.status(400);
+            res.body.should.be.a('object');
+            res.body.errorCode.should.contain('bad_request');
+            res.body.message.should.contain('Invalid id');
+            done();
+          });
+      });
+
+      
     });
-  });
+    describe('DELETE /api/peliculas/:id', () => {
+      it('it should delete pelicula of the specified id', (done) => {
+        chai.request(server)
+          .delete('/api/peliculas/14')
+          .end((err, res) => {
+            res.should.have.status(204);
+            done();
+          });
+      });
+
+      it('it should return invalid id', (done) => {
+        chai.request(server)
+          .delete('/api/peliculas/1t')
+          .end((err, res) => {
+            res.should.have.status(400);
+            res.body.should.be.a('object');
+            res.body.errorCode.should.contain('bad_request');
+            res.body.message.should.contain('Invalid id');
+            done();
+          });
+      });
+
+    });
 
 });
