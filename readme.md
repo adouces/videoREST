@@ -13,8 +13,9 @@ Para correr este proyecto hay que seguir los siguientes pasos:
 2. Instalar las dependencias con `npm install`
 3. Copiar `./config/config.sample.json` a `./config/config.json` 
 4. Completar `./config/config.json` con los datos de conexion
-5. Correr `npm run db:feed` para inicializar la base de datos
-6. Correr `npm start` para iniciar la API REST
+5. Tener la base de datos corriendo
+6. Correr `npm run db:feed` para inicializar la base de datos
+7. Correr `npm start` para iniciar la API REST
 
 ## Arquitectura
 El código implementado en este proyecto se basa en las siguientes capas de arquitectura.
@@ -43,12 +44,12 @@ Todas las siguientes propiedades son requeridas:
 - reparto
 
 ### GET /api/peliculas?page&nombre
-1. por default devuelve la primera pagina ordenada por nombre
-2. si recibo pagina devuelvo la pagina
-3. si recibo nombre busco por nombre y devuelvo los resultados paginados
+1. Por default devuelve la primera pagina ordenada por nombre
+2. Si recibo pagina devuelvo la pagina
+3. Si recibo nombre busco por nombre y devuelvo los resultados paginados
 
 ### GET /api/peliculas/:id
-devuelve la pelicula del id especificado
+Devuelve la pelicula del id especificado
 
 
 ### PATCH /api/peliculas/:id
@@ -60,4 +61,14 @@ Cualquiera de las siguientes propiedades pero como minimo una es requerida:
 - reparto
 
 ### DELETE /api/peliculas/:id
-elimina la pelicula con el id especificado
+Elimina la pelicula con el id especificado
+
+
+## Tests
+Para correr los tests se tienen que seguir los siguientes pasos:
+1. Descargar el código
+2. Instalar las dependencias con `npm install`
+3. Copiar `./config/config.sample.json` a `./config/config.test.json` 
+4. Completar `./config/config.test.json` con los datos de conexion
+5. Tener la base de datos corriendo
+7. Correr `npm test` para iniciar el test

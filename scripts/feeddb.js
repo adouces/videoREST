@@ -13,7 +13,7 @@ const movies = [
   },
   {
     nombre: "The Lion King",
-    pais: "Estaod Unidos",
+    pais: "Estados Unidos",
     fecha_estreno: new Date(1994, 6, 15),
     director: "Roger Allers, Rob Minkoff",
     reparto: "Matthew Broderick, Jeremy Irons, Nathan Lane"
@@ -34,7 +34,7 @@ const movies = [
   },
   {
     nombre: "Toy Story 3",
-    pais: "Estaods Unidos",
+    pais: "Estados Unidos",
     fecha_estreno: new Date(2010, 6, 12),
     director: "Lee Unkrich",
     reparto: "Tom Hanks, Tim Allen, Joan Cusack"
@@ -69,7 +69,7 @@ const movies = [
   },
   {
     nombre: "The Incredibles",
-    pais: "Estaodos Unidos",
+    pais: "Estados Unidos",
     fecha_estreno: new Date(2004, 10, 27),
     director: "Brad Bird",
     reparto: "Craig T. Nelson, Holly Hunter, Sarah Vowell"
